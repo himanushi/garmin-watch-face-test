@@ -3,12 +3,21 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.WatchUi;
 
-class Background extends System.ServiceDelegate {
-  public function initialize() {
-    ServiceDelegate.initialize();
+class Background extends WatchUi.Drawable {
+  function initialize() {
+    var dictionary = {
+      :identifier => "Background"
+    };
+
+    Drawable.initialize(dictionary);
   }
 
-  public function onTemporalEvent() as Void {
-    Background.exit(true);
+  function draw(dc as Dc) as Void {
+    // Set the background color then call to clear the screen
+    dc.setColor(
+      Graphics.COLOR_TRANSPARENT,
+      getApp().getProperty("BackgroundColor") as Number
+    );
+    dc.clear();
   }
 }
