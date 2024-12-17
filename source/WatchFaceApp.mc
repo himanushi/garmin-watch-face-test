@@ -1,7 +1,9 @@
 import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
+import Toybox.System;
 
+(:background)
 class WatchFaceApp extends Application.AppBase {
   function initialize() {
     AppBase.initialize();
@@ -21,6 +23,10 @@ class WatchFaceApp extends Application.AppBase {
   // New app settings have been received so trigger a UI update
   function onSettingsChanged() as Void {
     WatchUi.requestUpdate();
+  }
+
+  function getServiceDelegate() as [ServiceDelegate] {
+    return [new $.BackgroundDelegate()];
   }
 }
 
