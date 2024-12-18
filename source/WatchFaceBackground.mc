@@ -18,9 +18,9 @@ class BackgroundDelegate extends System.ServiceDelegate {
 
   public function onPhone(msg as Communications.PhoneAppMessage) as Void {
     var data = msg.data;
-    System.println("Phone message received");
+    info("Phone message received");
     if (data != null) {
-      System.println("Data received");
+      info("Data received");
       var url = data["jsonKey"];
       Communications.makeImageRequest(
         url,
@@ -31,7 +31,7 @@ class BackgroundDelegate extends System.ServiceDelegate {
         method(:onImageResponse)
       );
     } else {
-      System.println("No data");
+      info("No data");
     }
   }
 
@@ -42,14 +42,14 @@ class BackgroundDelegate extends System.ServiceDelegate {
     data as BitmapResource or BitmapReference or Null
   ) as Void {
     if (code == 200) {
-      System.println("Image received");
+      info("Image received");
       if (data != null) {
         Storage.setValue("image", data);
       }
     } else {
-      System.println("Image request failed");
+      info("Image request failed");
     }
 
-    System.println("Image request complete");
+    info("Image request complete");
   }
 }
