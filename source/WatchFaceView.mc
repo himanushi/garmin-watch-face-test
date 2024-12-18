@@ -38,6 +38,12 @@ class WatchFaceView extends WatchUi.WatchFace {
     view.setColor(Application.Properties.getValue("ForegroundColor") as Number);
     view.setText(timeString);
 
+    var bitmap = Storage.getValue("image") as Graphics.BitmapType;
+    if (bitmap != null) {
+      var background = View.findDrawableById("LayoutBackground") as Bitmap;
+      background.setBitmap(bitmap);
+    }
+
     View.onUpdate(dc);
   }
 
