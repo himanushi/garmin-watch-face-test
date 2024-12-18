@@ -14,7 +14,7 @@ class WatchFaceApp extends Application.AppBase {
   function onStop(state as Dictionary?) as Void {}
 
   function getInitialView() as [Views] or [Views, InputDelegates] {
-    return [new WatchFaceView()];
+    return [new $.WatchFaceView()];
   }
 
   function onSettingsChanged() as Void {
