@@ -41,6 +41,7 @@ class BackgroundDelegate extends System.ServiceDelegate {
 */
 
   const IMAGE_RESPONSE_METHODS = [
+    method(:onImageResponse0),
     method(:onImageResponse1),
     method(:onImageResponse2)
   ];
@@ -89,6 +90,13 @@ class BackgroundDelegate extends System.ServiceDelegate {
     data as BitmapResource or BitmapReference or Null
   ) as Void {
     imageResponse(code, data, "image1");
+  }
+
+  public function onImageResponse0(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image0");
   }
 
   public function onImageResponse2(

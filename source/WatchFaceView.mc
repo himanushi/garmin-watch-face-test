@@ -16,6 +16,27 @@ class WatchFaceView extends WatchUi.WatchFace {
   function onShow() as Void {}
 
   function onUpdate(dc as Dc) as Void {
+    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+    dc.clear();
+
+    var data = Storage.getValue("data") as Object?;
+    if (data != null) {
+      var list = data["data"] as Array<Object>;
+
+      if (list != null) {
+        for (var i = 0; i < list.size(); i++) {
+          var item = list[i] as Object;
+          var x = item["x"] as Number?;
+          var y = item["y"] as Number?;
+          var image = Storage.getValue("image" + i) as BitmapType?;
+
+          if (x != null && y != null && image != null) {
+            dc.drawBitmap(x, y, image);
+          }
+        }
+      }
+    }
+
     var timeFormat = "$1$:$2$";
     var clockTime = System.getClockTime();
     var hours = clockTime.hour;
@@ -37,12 +58,6 @@ class WatchFaceView extends WatchUi.WatchFace {
     var view = View.findDrawableById("TimeLabel") as Text;
     view.setColor(Application.Properties.getValue("ForegroundColor") as Number);
     view.setText(timeString);
-
-    var bitmap = Storage.getValue("image") as Graphics.BitmapType;
-    if (bitmap != null) {
-      var background = View.findDrawableById("LayoutBackground") as Bitmap;
-      background.setBitmap(bitmap);
-    }
 
     View.onUpdate(dc);
   }
