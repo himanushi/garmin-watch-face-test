@@ -71,7 +71,7 @@ class BackgroundDelegate extends System.ServiceDelegate {
                 {
                   :dithering => Communications.IMAGE_DITHERING_NONE
                 },
-                method(:onImageResponse1)
+                imageResponseMethod
               );
             }
           }
@@ -104,14 +104,14 @@ class BackgroundDelegate extends System.ServiceDelegate {
     key as String
   ) {
     if (code == 200) {
-      Log.info("Image received");
+      Log.info("Image received " + key);
       if (data != null) {
         Storage.setValue(key, data);
       }
     } else {
-      Log.info("Image request failed");
+      Log.info("Image request failed " + key);
     }
 
-    Log.info("Image request complete");
+    Log.info("Image request complete " + key);
   }
 }
