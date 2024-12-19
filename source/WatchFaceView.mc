@@ -14,7 +14,7 @@ class WatchFaceView extends WatchUi.WatchFace {
   function onShow() as Void {}
 
   function onUpdate(dc as Dc) as Void {
-    dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
     dc.clear();
 
     var data = Storage.getValue("data") as Object?;
@@ -26,6 +26,7 @@ class WatchFaceView extends WatchUi.WatchFace {
           var item = list[i] as Object;
           var x = item["x"] as Number?;
           var y = item["y"] as Number?;
+          Log.info("M:" + System.getSystemStats().usedMemory);
           var image = Storage.getValue("image" + i) as BitmapType?;
 
           if (x != null && y != null && image != null) {
