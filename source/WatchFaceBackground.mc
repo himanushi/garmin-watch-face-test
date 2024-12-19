@@ -21,12 +21,21 @@ class BackgroundDelegate extends System.ServiceDelegate {
 {
 "data": [{
 "imageUrl":"https://avatars.githubusercontent.com/u/27812830",
+"x":0,
+"y":0},
+{"imageUrl":"https://avatars.githubusercontent.com/u/27812830",
+"x":50,
+"y":50},
+{"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
 "x":100,
 "y":100},
+{"imageUrl":"https://avatars.githubusercontent.com/u/27812830",
+"x":150,
+"y":150},
 {"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
 "x":200,
-"y":200}]
-}
+"y":200}
+]}
 
 {
 "data": [{
@@ -43,7 +52,11 @@ class BackgroundDelegate extends System.ServiceDelegate {
   const IMAGE_RESPONSE_METHODS = [
     method(:onImageResponse0),
     method(:onImageResponse1),
-    method(:onImageResponse2)
+    method(:onImageResponse2),
+    method(:onImageResponse3),
+    method(:onImageResponse4),
+    method(:onImageResponse5),
+    method(:onImageResponse6)
   ];
 
   public function onPhone(msg as Communications.PhoneAppMessage) as Void {
@@ -85,13 +98,6 @@ class BackgroundDelegate extends System.ServiceDelegate {
 
   function onTemporalEvent() as Void {}
 
-  public function onImageResponse1(
-    code as Number,
-    data as BitmapResource or BitmapReference or Null
-  ) as Void {
-    imageResponse(code, data, "image1");
-  }
-
   public function onImageResponse0(
     code as Number,
     data as BitmapResource or BitmapReference or Null
@@ -99,11 +105,46 @@ class BackgroundDelegate extends System.ServiceDelegate {
     imageResponse(code, data, "image0");
   }
 
+  public function onImageResponse1(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image1");
+  }
+
   public function onImageResponse2(
     code as Number,
     data as BitmapResource or BitmapReference or Null
   ) as Void {
     imageResponse(code, data, "image2");
+  }
+
+  public function onImageResponse3(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image3");
+  }
+
+  public function onImageResponse4(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image4");
+  }
+
+  public function onImageResponse5(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image5");
+  }
+
+  public function onImageResponse6(
+    code as Number,
+    data as BitmapResource or BitmapReference or Null
+  ) as Void {
+    imageResponse(code, data, "image6");
   }
 
   public function imageResponse(
