@@ -34,7 +34,10 @@ class BackgroundDelegate extends System.ServiceDelegate {
 "y":150},
 {"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
 "x":200,
-"y":200}
+"y":200},
+{"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
+"x":250,
+"y":250}
 ]}
 
 {
@@ -55,8 +58,7 @@ class BackgroundDelegate extends System.ServiceDelegate {
     method(:onImageResponse2),
     method(:onImageResponse3),
     method(:onImageResponse4),
-    method(:onImageResponse5),
-    method(:onImageResponse6)
+    method(:onImageResponse5)
   ];
 
   public function onPhone(msg as Communications.PhoneAppMessage) as Void {
@@ -138,13 +140,6 @@ class BackgroundDelegate extends System.ServiceDelegate {
     data as BitmapResource or BitmapReference or Null
   ) as Void {
     imageResponse(code, data, "image5");
-  }
-
-  public function onImageResponse6(
-    code as Number,
-    data as BitmapResource or BitmapReference or Null
-  ) as Void {
-    imageResponse(code, data, "image6");
   }
 
   public function imageResponse(
