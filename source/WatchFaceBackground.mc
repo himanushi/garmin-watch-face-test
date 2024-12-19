@@ -20,24 +20,21 @@ class BackgroundDelegate extends System.ServiceDelegate {
 
 {
 "data": [{
-"imageUrl":"https://avatars.githubusercontent.com/u/27812830",
+"imageUrl":"https://cdn-static-files-3sj.pages.dev/1.png",
 "x":0,
 "y":0},
-{"imageUrl":"https://avatars.githubusercontent.com/u/27812830",
-"x":50,
-"y":50},
-{"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
-"x":100,
-"y":100},
-{"imageUrl":"https://avatars.githubusercontent.com/u/27812830",
-"x":150,
-"y":150},
-{"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
-"x":200,
-"y":200},
-{"imageUrl":"https://avatars.githubusercontent.com/u/27782135",
-"x":250,
-"y":250}
+{"imageUrl":"https://cdn-static-files-3sj.pages.dev/2.png",
+"x":0,
+"y":0},
+{"imageUrl":"https://cdn-static-files-3sj.pages.dev/3.png",
+"x":0,
+"y":0},
+{"imageUrl":"https://cdn-static-files-3sj.pages.dev/4.png",
+"x":0,
+"y":0},
+{"imageUrl":"https://cdn-static-files-3sj.pages.dev/5.png",
+"x":0,
+"y":0}
 ]}
 
 {
