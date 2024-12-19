@@ -9,9 +9,7 @@ class WatchFaceView extends WatchUi.WatchFace {
     WatchFace.initialize();
   }
 
-  function onLayout(dc as Dc) as Void {
-    setLayout(Rez.Layouts.WatchFace(dc));
-  }
+  function onLayout(dc as Dc) as Void {}
 
   function onShow() as Void {}
 
@@ -31,9 +29,8 @@ class WatchFaceView extends WatchUi.WatchFace {
           var image = Storage.getValue("image" + i) as BitmapType?;
 
           if (x != null && y != null && image != null) {
-            // dc.drawBitmap(x, y, image);
             var xform = new AffineTransform();
-            xform.setToRotation(0.5);
+            xform.setToRotation(0.0);
             dc.drawBitmap2(x, y, image, { :transform => xform });
           }
         }
